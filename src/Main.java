@@ -1,15 +1,20 @@
-
-
 public class Main {
 
-    public static void main(String[] args){
-       String name = "admin";
-       String char1 = name.substring(0,1); //char="a"
-        System.out.println(char1);
-        char character = 'a';
-        int ascii ;
-        for (int i =0 ; i<100 ; i++)
-        System.out.println();
-        System.out.println();
+    public static void main(String[] args) {
+        //Создаем массив байт с символами строки
+        String txt = "My cat is the best in the world";
+        System.out.println(txt);
+
+        byte[] txtbytes = txt.getBytes();
+
+        for (byte el : txtbytes) System.out.print(el + " ,");
+
+        System.out.println("\n" + "----------------------------------------------");
+        AsciiCharSequence ascc = new AsciiCharSequence(txtbytes);
+        System.out.println("ascc.length() " + ascc.length());
+        System.out.println("ascc.charAt(5): " + ascc.charAt(5));
+        System.out.println("toString(): " + ascc.toString());
+        System.out.println("subSequence(4,15): " + ascc.subSequence(4, 15));
+
     }
 }
